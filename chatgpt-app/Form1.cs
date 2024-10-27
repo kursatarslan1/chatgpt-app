@@ -16,6 +16,7 @@ namespace chatgpt_app
     public partial class Form1 : Form
     {
         private readonly AppDbContext _context;
+        bool gptOrGemini = true;
         public Form1()
         {
             InitializeComponent();
@@ -86,7 +87,7 @@ namespace chatgpt_app
             }
 
             AddMessageToChat(userMessage, true);
-            string botReply = await _context.SendMessage(userMessage);
+            string botReply = await _context.SendMessage(userMessage, gptOrGemini);
 
             if (botReply != null)
             {
@@ -109,7 +110,7 @@ namespace chatgpt_app
             messageTextBox.Width = pnlChat.Width - 20;
 
             messageTextBox.Font = new Font("Arial", 12, FontStyle.Regular); // Fontu büyütün
-            string sender = isUserMessage ? "Sen: " : "ChatGPT: ";
+            string sender = isUserMessage ? "Sen: " : gptOrGemini ? "ChatGPT: " : "Gemini: ";
 
             messageTextBox.Text = sender + message;
             messageTextBox.BackColor = isUserMessage ? Color.LightBlue : Color.LightGray;
@@ -121,5 +122,20 @@ namespace chatgpt_app
             pnlChat.ScrollControlIntoView(messageTextBox);
         }
 
+        private void btnUseChatGpt_Click(object sender, EventArgs e)
+        {
+            gptOrGemini = true;
+            lblAI2.Text = "ChatGPT";
+            lblAI2.ForeColor = Color.DarkCyan;
+            pictureBox1.Image = Properties.Resources.chatgpt_85e25;
+        }
+
+        private void btnUseGemini_Click(object sender, EventArgs e)
+        {
+            gptOrGemini = false;
+            lblAI2.Text = "Gemini";
+            lblAI2.ForeColor = Color.BlueViolet;
+            pictureBox1.Image = Properties.Resources.gemini_turkce_1068x580;
+        }
     }
 }

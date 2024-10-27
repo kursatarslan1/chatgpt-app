@@ -18,9 +18,9 @@ namespace chatgpt_app.service
             _chatService = new ChatService(httpClient, apiUrl);
         }
 
-        public async Task<string> SendMessage(string message)
+        public async Task<string> SendMessage(string message, bool gptOrGemini)
         {
-            return await _chatService.SendMessageAsync(message);
+            return await _chatService.SendMessageAsync(message, gptOrGemini);
         }
     }
 }

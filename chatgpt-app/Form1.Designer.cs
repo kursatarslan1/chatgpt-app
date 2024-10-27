@@ -28,34 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnMaxNormal = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnExit = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.pnlChat = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMessage = new System.Windows.Forms.Panel();
             this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
             this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnUseChatGpt = new Guna.UI2.WinForms.Guna2Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnUseGemini = new Guna.UI2.WinForms.Guna2Button();
+            this.lblAI = new System.Windows.Forms.Label();
+            this.lblAI2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnlLeft.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMiddle.SuspendLayout();
             this.pnlMessage.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.lblAI2);
+            this.panel1.Controls.Add(this.lblAI);
             this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.btnMaxNormal);
             this.panel1.Controls.Add(this.btnExit);
@@ -123,6 +129,9 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlLeft.Controls.Add(this.btnUseGemini);
+            this.pnlLeft.Controls.Add(this.panel5);
+            this.pnlLeft.Controls.Add(this.btnUseChatGpt);
             this.pnlLeft.Controls.Add(this.panel4);
             this.pnlLeft.Controls.Add(this.panel3);
             this.pnlLeft.Controls.Add(this.panel2);
@@ -130,15 +139,34 @@
             this.pnlLeft.Location = new System.Drawing.Point(0, 43);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlLeft.Size = new System.Drawing.Size(171, 651);
+            this.pnlLeft.Size = new System.Drawing.Size(196, 651);
             this.pnlLeft.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblStatus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(5, 546);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(186, 100);
+            this.panel4.TabIndex = 2;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStatus.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblStatus.Location = new System.Drawing.Point(0, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(186, 100);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "Hazır";
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(5, 105);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(161, 39);
+            this.panel3.Size = new System.Drawing.Size(186, 39);
             this.panel3.TabIndex = 1;
             // 
             // panel2
@@ -147,28 +175,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(161, 100);
+            this.panel2.Size = new System.Drawing.Size(186, 100);
             this.panel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlMiddle
             // 
             this.pnlMiddle.Controls.Add(this.pnlChat);
             this.pnlMiddle.Controls.Add(this.pnlMessage);
             this.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddle.Location = new System.Drawing.Point(171, 43);
+            this.pnlMiddle.Location = new System.Drawing.Point(196, 43);
             this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(929, 651);
+            this.pnlMiddle.Size = new System.Drawing.Size(904, 651);
             this.pnlMiddle.TabIndex = 2;
             // 
             // pnlChat
@@ -176,7 +193,7 @@
             this.pnlChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChat.Location = new System.Drawing.Point(0, 0);
             this.pnlChat.Name = "pnlChat";
-            this.pnlChat.Size = new System.Drawing.Size(929, 569);
+            this.pnlChat.Size = new System.Drawing.Size(904, 569);
             this.pnlChat.TabIndex = 1;
             // 
             // pnlMessage
@@ -188,7 +205,7 @@
             this.pnlMessage.Location = new System.Drawing.Point(0, 569);
             this.pnlMessage.Name = "pnlMessage";
             this.pnlMessage.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlMessage.Size = new System.Drawing.Size(929, 82);
+            this.pnlMessage.Size = new System.Drawing.Size(904, 82);
             this.pnlMessage.TabIndex = 0;
             // 
             // btnSendMessage
@@ -201,7 +218,7 @@
             this.btnSendMessage.FillColor = System.Drawing.Color.Black;
             this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendMessage.ForeColor = System.Drawing.Color.White;
-            this.btnSendMessage.Location = new System.Drawing.Point(760, 20);
+            this.btnSendMessage.Location = new System.Drawing.Point(735, 20);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(149, 42);
             this.btnSendMessage.TabIndex = 1;
@@ -226,27 +243,86 @@
             this.txtMessage.PlaceholderForeColor = System.Drawing.Color.Maroon;
             this.txtMessage.PlaceholderText = "Mesajınızı Buraya Giriniz...";
             this.txtMessage.SelectedText = "";
-            this.txtMessage.Size = new System.Drawing.Size(889, 42);
+            this.txtMessage.Size = new System.Drawing.Size(864, 42);
             this.txtMessage.TabIndex = 0;
             // 
-            // panel4
+            // btnUseChatGpt
             // 
-            this.panel4.Controls.Add(this.lblStatus);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(5, 546);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(161, 100);
-            this.panel4.TabIndex = 2;
+            this.btnUseChatGpt.BorderRadius = 15;
+            this.btnUseChatGpt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseChatGpt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseChatGpt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUseChatGpt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUseChatGpt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUseChatGpt.FillColor = System.Drawing.Color.DarkCyan;
+            this.btnUseChatGpt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUseChatGpt.ForeColor = System.Drawing.Color.White;
+            this.btnUseChatGpt.Location = new System.Drawing.Point(5, 144);
+            this.btnUseChatGpt.Name = "btnUseChatGpt";
+            this.btnUseChatGpt.Size = new System.Drawing.Size(186, 45);
+            this.btnUseChatGpt.TabIndex = 3;
+            this.btnUseChatGpt.Text = "ChatGPT kullan";
+            this.btnUseChatGpt.Click += new System.EventHandler(this.btnUseChatGpt_Click);
             // 
-            // lblStatus
+            // panel5
             // 
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblStatus.Location = new System.Drawing.Point(0, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(161, 100);
-            this.lblStatus.TabIndex = 0;
-            this.lblStatus.Text = "Hazır";
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(5, 189);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(186, 22);
+            this.panel5.TabIndex = 4;
+            // 
+            // btnUseGemini
+            // 
+            this.btnUseGemini.BorderRadius = 15;
+            this.btnUseGemini.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseGemini.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseGemini.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUseGemini.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUseGemini.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUseGemini.FillColor = System.Drawing.Color.BlueViolet;
+            this.btnUseGemini.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUseGemini.ForeColor = System.Drawing.Color.White;
+            this.btnUseGemini.Location = new System.Drawing.Point(5, 211);
+            this.btnUseGemini.Name = "btnUseGemini";
+            this.btnUseGemini.Size = new System.Drawing.Size(186, 45);
+            this.btnUseGemini.TabIndex = 5;
+            this.btnUseGemini.Text = "Gemini\'yi kullan";
+            this.btnUseGemini.Click += new System.EventHandler(this.btnUseGemini_Click);
+            // 
+            // lblAI
+            // 
+            this.lblAI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblAI.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAI.Location = new System.Drawing.Point(0, 0);
+            this.lblAI.Name = "lblAI";
+            this.lblAI.Size = new System.Drawing.Size(131, 43);
+            this.lblAI.TabIndex = 4;
+            this.lblAI.Text = "Kullanılan Yapay Zeka: ";
+            this.lblAI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAI2
+            // 
+            this.lblAI2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblAI2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAI2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAI2.Location = new System.Drawing.Point(131, 0);
+            this.lblAI2.Name = "lblAI2";
+            this.lblAI2.Size = new System.Drawing.Size(116, 43);
+            this.lblAI2.TabIndex = 5;
+            this.lblAI2.Text = "ChatGPT";
+            this.lblAI2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::chatgpt_app.Properties.Resources.chatgpt_85e25;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(186, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -262,11 +338,11 @@
             this.Text = "ChatBot";
             this.panel1.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
             this.pnlMessage.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,6 +364,11 @@
         private System.Windows.Forms.FlowLayoutPanel pnlChat;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblStatus;
+        private Guna.UI2.WinForms.Guna2Button btnUseGemini;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI2.WinForms.Guna2Button btnUseChatGpt;
+        private System.Windows.Forms.Label lblAI2;
+        private System.Windows.Forms.Label lblAI;
     }
 }
 

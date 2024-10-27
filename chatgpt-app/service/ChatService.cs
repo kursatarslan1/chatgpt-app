@@ -18,8 +18,9 @@ namespace chatgpt_app.service
             _apiUrl = apiUrl;
         }
 
-        public async Task<string> SendMessageAsync(string userMessage)
+        public async Task<string> SendMessageAsync(string userMessage, bool gptOrGemini)
         {
+            string url = gptOrGemini ? "chat" : "gemini";
             var requestBody = new
             {
                 message = userMessage
@@ -29,7 +30,8 @@ namespace chatgpt_app.service
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try { 
-                var response = await _httpClient.PostAsync(_apiUrl + "chat", content);
+                
+                var response = await _httpClient.PostAsync(_apiUrl + url, content);
 
                 if (response.IsSuccessStatusCode)
                 {
